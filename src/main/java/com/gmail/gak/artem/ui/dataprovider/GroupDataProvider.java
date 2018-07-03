@@ -7,6 +7,8 @@ import com.vaadin.flow.data.provider.Query;
 import com.vaadin.flow.data.provider.QuerySortOrder;
 import com.vaadin.flow.data.provider.QuerySortOrderBuilder;
 import com.vaadin.flow.spring.annotation.SpringComponent;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -15,6 +17,7 @@ import org.vaadin.artur.spring.dataprovider.FilterablePageableDataProvider;
 import java.util.List;
 
 @SpringComponent
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class GroupDataProvider extends FilterablePageableDataProvider<Group, String> {
 
     private GroupService groupService;
