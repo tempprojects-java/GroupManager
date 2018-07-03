@@ -24,22 +24,30 @@ public class Application {
         return new CommandLineRunner() {
             @Override
             public void run(String... strings) throws Exception {
-                Group group = new Group("Tes #1");
                 Contact contact;
 
+                Group group = new Group("Tes #1");
                 groupService.save(group);
-
-                for (int i = 1; i <= 200; i++) {
-                    contact = new Contact(null, "Name" + i, "Surname" + i, "1234567" + i, "user" + i + "@test.com");
-                    contactService.save(contact);
-                }
-                for (int i = 1; i <= 200; i++) {
-                    contact = new Contact(group, "Other" + i, "OtherSurname" + i, "7654321" + i, "user" + i + "@other.com");
+                for (int i = 1; i <= 100; i++) {
+                    contact = new Contact(group, "Name" + i, "Surname" + i, "1234567" + i, "user" + i + "@test.com");
                     contactService.save(contact);
                 }
 
-                group = new Group("Test #2");
+                for (int i = 1; i <= 100; i++) {
+                    contact = new Contact(null, "Other" + i, "OtherSurname" + i, "5569874" + i, "user" + i + "@other.com");
+                    contactService.save(contact);
+                }
+
+                group = new Group("Tes #2");
                 groupService.save(group);
+                for (int i = 1; i <= 100; i++) {
+                    contact = new Contact(group, "Name" + i, "Surname" + i, "7654321" + i, "user" + i + "@other.com");
+                    contactService.save(contact);
+                }
+
+                group = new Group("Test #3");
+                groupService.save(group);
+
             }
         };
     }
