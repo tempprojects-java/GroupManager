@@ -18,6 +18,7 @@ import com.vaadin.flow.router.*;
 import static com.gmail.gak.artem.ui.utils.ConstContainer.NOTIFICATION_DURATION;
 
 @Route(value = ConstContainer.PAGE_GROUP, layout = MainView.class)
+@PageTitle(value = ConstContainer.TITLE_GROUP)
 public class GroupView extends VerticalLayout implements HasUrlParameter<Long>, BeforeEnterObserver, HasNotification {
     private GroupPresenter presenter;
     private Button addBtn;

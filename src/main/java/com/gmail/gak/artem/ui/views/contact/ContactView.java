@@ -22,6 +22,7 @@ import static com.gmail.gak.artem.ui.utils.ConstContainer.NOTIFICATION_DURATION;
 
 @Route(value = ConstContainer.PAGE_CONTACT, layout = MainView.class)
 @RouteAlias(value = ConstContainer.PAGE_ROOT, layout = MainView.class)
+@PageTitle(value = ConstContainer.TITLE_CONTACT)
 public class ContactView extends VerticalLayout implements HasUrlParameter<Long>, BeforeEnterObserver, HasNotification {
     private Grid<Contact> grid;
     private SearchBox searchBox;
